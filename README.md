@@ -35,3 +35,9 @@ Antes de excluir uma tarefa concluída, é exibida uma mensagem de confirmação
 ---
 ## Alunos Participantes
 
+* André Luis Oliveira 
+* Josué Lucas M.M 
+* Marcos Vinícius Ribeiro
+* Rodrigo Azevedo 
+* Wendson Tiago
+
