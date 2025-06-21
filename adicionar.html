@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adicionar Tarefas</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <main class="form-container">
+        <h1>Registre uma nova tarefa</h1>
+        <br />
+        <div class="form-inputs">
+            <label for="opcao">Selecione a importância da tarefa:</label>
+            <select id="opcao" name="opcao" class="form-select mb-3">
+                <option value="">-- Escolha uma opção --</option>
+                <option value="prioridade">Alta Prioridade</option>
+                <option>Baixa Prioridade</option>
+            </select>
+            <input type="text" id="tarefa" name="tarefa" placeholder="Digite uma tarefa..." />
+            <input type="text" id="usuario" name="usuario" placeholder="Quem realizará a tarefa..." />
+            <input type="date" id="data" name="data" />
+            <input type="time" id="hora" name="hora" />
+        </div>
+
+        <div class="form-buttons">
+            <button class="btn btn-primary"
+                onclick="adicionar( tarefa.value, usuario.value, data.value, hora.value, opcao.value)">
+                Adicionar
+            </button>
+            <button class="btn btn-success" onclick="irParaVisualizar()">
+                Ver Tarefas
+            </button>
+        </div>
+    </main>
+    <script src="js/adicionar.js"></script>
+</body>
+
+</html>
