@@ -1,4 +1,4 @@
-# Como Funciona o Gerenciador de Tarefas?
+# 📚 Como Funciona o Gerenciador de Tarefas?
 
 Este projeto é um **Gerenciador de Tarefas Web**, composto por três páginas principais: _"iniciar.html"_, _"adicionar.html"_ e _"visualizar.html"_.
 
@@ -17,20 +17,21 @@ Página usada para cadastrar novas tarefas. Nela, o usuário preenche o nome da 
 
 ## Principais Validações
 
-* 1ª Validação:
+1ª Validação:
 O usuário não pode adicionar tarefas sem preencher os campos obrigatórios: nome da tarefa, nome do responsável, data, hora e nível de prioridade.
 
-* 2ª Validação:
+2ª Validação:
 A tarefa deve ter no mínimo 5 caracteres, para que fique claro o que precisa ser feito.
 
-* 3ª Validação:
+3ª Validação:
 O nome do usuário deve ter no mínimo 3 caracteres, para identificar quem será responsável pela tarefa.
 
-* 4ª Validação:
+4ª Validação:
 Não é possível criar tarefas com data de conclusão no passado. O sistema só permite datas iguais ou posteriores ao dia atual.
 
-* 5ª Validação:
+5ª Validação:
 Antes de excluir uma tarefa concluída, é exibida uma mensagem de confirmação, para evitar exclusões acidentais.
 
+---
 ## Alunos Participantes
 
