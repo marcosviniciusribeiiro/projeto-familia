@@ -32,5 +32,5 @@ Não é possível criar tarefas com data de conclusão no passado. O sistema só
 * 5ª Validação:
 Antes de excluir uma tarefa concluída, é exibida uma mensagem de confirmação, para evitar exclusões acidentais.
 
-# Alunos Participantes
+## Alunos Participantes
 
