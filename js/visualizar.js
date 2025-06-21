@@ -125,7 +125,7 @@ function carregarTarefa() {
           <div class="botoes-excluir" style="${
             tarefa.concluida ? "" : "display: none;"
           }">
-            <button class="btn btn-danger btn-sm" onclick="excluirTarefa(${index})">Excluir</button>
+            <button class="btn btn-danger btn-sm w-100" onclick="excluirTarefa(${index})">Excluir</button>
           </div>
         </label>`;
 
