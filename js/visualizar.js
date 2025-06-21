@@ -2,24 +2,30 @@
 function criarTarefas() {
   let tarefasIniciais = [
     {
+      id: Date.now + 1,
       nome: "Estudar Javascript",
       usuario: "Josué",
       data: "2025-06-15",
       hora: "16:30",
+      opcao: "normal",
       concluida: true,
     },
     {
+      id: Date.now + 2,
       nome: "Fazer exercício",
       usuario: "João",
       data: "2025-06-20",
       hora: "17:00",
+      opcao: "normal",
       concluida: true,
     },
     {
+      id: Date.now + 3,
       nome: "Ler um Livro",
       usuario: "Marcos",
       data: "2025-06-23",
       hora: "20:30",
+      opcao: "normal",
       concluida: false,
     },
   ];
@@ -42,11 +48,31 @@ function carregarTarefa() {
     if (grupo_tarefas.length === 0) return; // Se o grupo estiver vazio, não mostrará nada
     const cabecalho = document.createElement("h3");
     cabecalho.textContent = titulo;
+
     cabecalho.classList.add("mt-4");
+
+    if (titulo.includes("Pendentes")) {
+      cabecalho.classList.add(
+        "bg-warning",
+        "text-dark",
+        "p-2",
+        "rounded",
+        "mt-4"
+      );
+    } else {
+      cabecalho.classList.add(
+        "bg-success",
+        "text-white",
+        "p-2",
+        "rounded",
+        "mt-4"
+      );
+    }
+
     lista.appendChild(cabecalho);
 
     // Ordenar por data e hora
-    tarefas.sort((a, b) => {
+    grupo_tarefas.sort((a, b) => {
       const dataA = new Date(`${a.data}T${a.hora}`);
       const dataB = new Date(`${b.data}T${b.hora}`);
       return dataA - dataB;
@@ -73,13 +99,7 @@ function carregarTarefa() {
       lista.appendChild(dataTitulo);
 
       tarefasPorData[data].forEach((tarefa) => {
-        const index = tarefas.findIndex(
-          (t) =>
-            t.nome === tarefa.nome &&
-            t.usuario === tarefa.usuario &&
-            t.data === tarefa.data &&
-            t.hora === tarefa.hora
-        );
+        const index = tarefas.findIndex((t) => t.id === tarefa.id);
         const li = document.createElement("li");
         const concluidaClass = tarefa.concluida ? "tarefa-concluida" : "";
 
