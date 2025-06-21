@@ -1,4 +1,4 @@
-# 📚 Como Funciona o Gerenciador de Tarefas?
+# 📚 Gerenciador de Tarefas
 
 Este projeto é um **Gerenciador de Tarefas Web**, composto por três páginas principais: _"iniciar.html"_, _"adicionar.html"_ e _"visualizar.html"_.
 
