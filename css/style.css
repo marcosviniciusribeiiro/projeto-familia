@@ -1,0 +1,389 @@
+/* =====================================================
+   REGRAS GERAIS DE RESET E NORMALIZAÇÃO
+   ===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background: linear-gradient(68.15deg, #229fb0cb 16.62%, #1348db 85.61%);
+  margin: 0%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input {
+  text-align: center;
+  margin: 10px;
+}
+
+button {
+  width: 120px;
+  margin: 5px;
+}
+
+li {
+  list-style: none;
+}
+
+h4{
+    margin: 10px;
+    text-align: center;
+    background-color: rgba(136, 201, 245, 0.685);
+    padding: 3px;
+    width: 150px;
+    border: 2px inset rgba(99, 99, 99, 0.404);
+    border-radius: 2px;
+}
+h4:hover{
+    background-color: rgba(83, 154, 201, 0.507);
+    transition: 100ms;
+}
+
+/* =====================================================
+   ELEMENTOS COMUNS E ÍCONES
+   ===================================================== */
+.b-example-divider {
+  width: 100%;
+  height: 3rem;
+  background-color: #0000001a;
+  border: solid rgba(0, 0, 0, 0.15);
+  border-width: 1px 0;
+  box-shadow: inset 0 0.5em 1.5em #0000001a, inset 0 0.125em 0.5em #00000026;
+}
+
+.bi {
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+/* =====================================================
+   ESTILO GERAL DOS BOTÕES
+   ===================================================== */
+button.btn.btn-primary {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  height: auto;
+}
+
+button.btn.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+button.btn.btn-success {
+  background-color: #28a745;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  height: auto;
+  border: none;
+  cursor: pointer;
+}
+
+button.btn.btn-success:hover {
+  background-color: #1e7e34;
+}
+
+/* Botão "Iniciar" laranja */
+.btn-iniciar {
+  background-color: #ff5733;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-iniciar:hover {
+  background-color: #e04e2e;
+}
+
+/* Efeito suave para riscar tarefas */
+label.tarefa-concluida span {
+  text-decoration: line-through;
+  color: #777;
+  opacity: 0.7;
+  transition: all 0.4s ease;
+}
+
+/* Tarefa normal sem risco */
+label span {
+  transition: all 0.4s ease;
+}
+
+/* Estilo base (não concluída) com transição */
+label.list-group-item h5,
+label.list-group-item strong,
+label.list-group-item small {
+  transition: all 0.4s ease;
+}
+
+/* Estilo para tarefas concluídas com transição */
+.tarefa-concluida h5,
+.tarefa-concluida strong,
+.tarefa-concluida small {
+  text-decoration: line-through;
+  opacity: 0.5;
+  transition: all 0.4s ease;
+}
+
+/* =====================================================
+   CONTAINER DO FORMULÁRIO
+   ===================================================== */
+.form-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.form-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form-inputs input {
+  flex: 1 1 200px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 180px;
+}
+
+.form-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* =====================================================
+   CABEÇALHO E MENU
+   ===================================================== */
+.cabecalho {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 24px;
+}
+
+.cabecalho-imagem {
+  height: 72px;
+}
+
+.cabecalho-menu {
+  display: flex;
+  gap: 32px;
+}
+
+.cabecalho-menu-item {
+  font-family: "Sarala", sans-serif;
+  color: #fff2e7;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+/* =====================================================
+   CONTEÚDO PRINCIPAL
+   ===================================================== */
+.conteudo {
+  margin-bottom: 48px;
+  border-top: 0.4px solid #fff2e7;
+}
+
+.conteudo-principal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.conteudo-principal-escrito {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 500px;
+}
+
+.conteudo-principal-escrito-titulo {
+  font-family: "Righteous", cursive;
+  font-weight: 400;
+  font-size: 64px;
+  color: #fff2e7;
+}
+
+.conteudo-principal-escrito-subtitulo {
+  font-family: "Sarala", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #ecd6c4;
+}
+
+.conteudo-principal-escrito-botao {
+  background-color: #ecd6c4;
+  width: 180px;
+  height: 60px;
+  border: none;
+  box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-family: "Sarala", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #2f2325;
+}
+
+.conteudo-principal-escrito-botao:hover {
+  background-color: rgba(236, 214, 196, 0.53);
+}
+
+.conteudo-principal-imagem {
+  height: 430px;
+  max-width: 100%;
+}
+
+/* =====================================================
+   CONTEÚDO SECUNDÁRIO
+   ===================================================== */
+.conteudo-secundario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.conteudo-secundario-titulo {
+  border-top: 0.4px solid #fff2e7;
+  padding-top: 48px;
+  font-family: "Righteous", cursive;
+  font-weight: 400;
+  font-size: 24px;
+  color: #fff2ef;
+  margin-bottom: 16px;
+}
+
+.conteudo-secundario-paragrafo {
+  font-family: "Sarala", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
+  max-width: 800px;
+}
+
+/* =====================================================
+   RODAPÉ
+   ===================================================== */
+.rodape {
+  padding: 32px;
+  border-top: 0.4px solid #fff2e7;
+}
+
+.rodape-imagem {
+  height: 48px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* =====================================================
+   TELA INICIAL E BOTÕES SUPERIORES
+   ===================================================== */
+.iniciar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.titulo-inicial {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.botoes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.corpo-inicial {
+  text-align: center;
+  font-size: large;
+}
+
+/* =====================================================
+   MEDIA QUERY PARA RESPONSIVIDADE (TELAS PEQUENAS)
+   ===================================================== */
+@media (max-width: 768px) {
+  .conteudo-principal {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .conteudo-principal-escrito-titulo {
+    font-size: 40px;
+  }
+
+  .conteudo-principal-escrito-subtitulo {
+    font-size: 20px;
+  }
+
+  .iniciar-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .botoes-container {
+    justify-content: center;
+  }
+
+  .cabecalho-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .conteudo-secundario-paragrafo {
+    padding: 0 20px;
+  }
+
+  .form-inputs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-buttons button {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+ 
