@@ -35,6 +35,7 @@ function adicionar(nome, usuario, data, hora, opcao) {
     }
 
     const novaTarefa = {
+        id: Date.now(), // Id único para cada tarefa
         nome: nome,
         usuario: usuario,
         data: data,
