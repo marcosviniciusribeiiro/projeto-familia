@@ -33,44 +33,57 @@ function carregarTarefa() {
   const lista = document.getElementById("lista");
   lista.innerHTML = "";
 
-  // Ordenar por data + hora
-  tarefas.sort((a, b) => {
-    const dataA = new Date(`${a.data}T${a.hora}`);
-    const dataB = new Date(`${b.data}T${b.hora}`);
-    return dataA - dataB;
-  });
+  // Separando as tarefas em dois grupos: Pendentes e Concluidas
+  const pendentes = tarefas.filter((t) => !t.concluida);
+  const concluidas = tarefas.filter((t) => t.concluida);
 
-  // Agrupar tarefas por data
-  const tarefasPorData = {};
-  tarefas.forEach((tarefa) => {
-    if (!tarefasPorData[tarefa.data]) {
-      tarefasPorData[tarefa.data] = [];
-    }
-    tarefasPorData[tarefa.data].push(tarefa);
-  });
-
-  // Mostrar agrupadas por data
-  for (const data in tarefasPorData) {
-    // Converter data para pt-BR
-    const partes = data.split("-");
-    const dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`;
-
-    const cabecalho = document.createElement("h4");
-    cabecalho.textContent = `📅 ${dataFormatada}`;
+  // Função para exibir as tarefas de acordo com o seu status
+  function exibirTarefasPorStatus(grupo_tarefas, titulo) {
+    if (grupo_tarefas.length === 0) return; // Se o grupo estiver vazio, não mostrará nada
+    const cabecalho = document.createElement("h3");
+    cabecalho.textContent = titulo;
+    cabecalho.classList.add("mt-4");
     lista.appendChild(cabecalho);
 
-    tarefasPorData[data].forEach((tarefa) => {
-      const index = tarefas.findIndex(
-        (t) =>
-          t.nome === tarefa.nome &&
-          t.usuario === tarefa.usuario &&
-          t.data === tarefa.data &&
-          t.hora === tarefa.hora
-      );
-      const li = document.createElement("li");
-      const concluidaClass = tarefa.concluida ? "tarefa-concluida" : "";
+    // Ordenar por data e hora
+    tarefas.sort((a, b) => {
+      const dataA = new Date(`${a.data}T${a.hora}`);
+      const dataB = new Date(`${b.data}T${b.hora}`);
+      return dataA - dataB;
+    });
 
-      li.innerHTML = `
+    // Agrupar tarefas por data
+    const tarefasPorData = {};
+
+    grupo_tarefas.forEach((tarefa) => {
+      if (!tarefasPorData[tarefa.data]) {
+        tarefasPorData[tarefa.data] = [];
+      }
+      tarefasPorData[tarefa.data].push(tarefa);
+    });
+
+    // Mostrar agrupadas por data
+    for (const data in tarefasPorData) {
+      // Converte a data para o padrão dd/mm/yy para cada tarefa
+      const partes = data.split("-");
+      const dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`;
+
+      const dataTitulo = document.createElement("h4");
+      dataTitulo.textContent = `${dataFormatada}`;
+      lista.appendChild(dataTitulo);
+
+      tarefasPorData[data].forEach((tarefa) => {
+        const index = tarefas.findIndex(
+          (t) =>
+            t.nome === tarefa.nome &&
+            t.usuario === tarefa.usuario &&
+            t.data === tarefa.data &&
+            t.hora === tarefa.hora
+        );
+        const li = document.createElement("li");
+        const concluidaClass = tarefa.concluida ? "tarefa-concluida" : "";
+
+        li.innerHTML = `
         <label class="list-group-item d-flex gap-3 justify-content-between align-items-start ${concluidaClass}" data-index="${index}">
           <div class="d-flex gap-3">
             <input class="form-check-input flex-shrink-0" type="checkbox"
@@ -96,9 +109,12 @@ function carregarTarefa() {
           </div>
         </label>`;
 
-      lista.appendChild(li);
-    });
+        lista.appendChild(li);
+      });
+    }
   }
+  exibirTarefasPorStatus(pendentes, "📌 Tarefas Pendentes");
+  exibirTarefasPorStatus(concluidas, "✅ Tarefas Concluidas");
 }
 
 // Função para marcar/desmarcar uma tarefa como concluída e atualizar o localStorage
