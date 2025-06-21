@@ -10,7 +10,7 @@ Este projeto é um **Gerenciador de Tarefas Web**, composto por três páginas p
 ### Visualizar.html:
 Página responsável por carregar e exibir as tarefas armazenadas no localStorage, organizando-as pelos status "Pendentes" e "Concluídas". O status de cada tarefa é salvo e atualizado conforme as ações do usuário.
 
-Esta página também permite adicionar novas tarefas (botão "+ Tarefas"), marcar tarefas como concluídas e excluir tarefas já realizadas (botão "Excluir").
+Esta página também permite adicionar novas tarefas com o botão "+ Tarefas", marcar tarefas como concluídas e excluir tarefas já realizadas utilizando o botão "Excluir".
 
 ### Adicionar.html:
 Página usada para cadastrar novas tarefas. Nela, o usuário preenche o nome da tarefa, nome do responsável, data, hora e nível de prioridade (alta ou baixa). Ao clicar em "Adicionar", a tarefa é salva no localStorage e pode ser visualizada em visualizar.html por meio do botão "Ver Tarefas".
