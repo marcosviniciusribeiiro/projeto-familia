@@ -71,14 +71,14 @@ function carregarTarefa() {
 
     lista.appendChild(cabecalho);
 
-    // Ordenar por data e hora
-    grupo_tarefas.sort((a, b) => {
-      const dataA = new Date(`${a.data}T${a.hora}`);
-      const dataB = new Date(`${b.data}T${b.hora}`);
-      return dataA - dataB;
+    // Ordenando o array "grupo_tarefas" do mais antigo para o mais recente
+    grupo_tarefas.sort((primeiraTarefa, segundaTarefa) => {
+      const primeiraData = new Date(`${primeiraTarefa.data}T${primeiraTarefa.hora}`);
+      const segundaData = new Date(`${segundaTarefa.data}T${segundaTarefa.hora}`);
+      return primeiraData - segundaData;
     });
 
-    // Agrupar tarefas por data
+    // Agrupando as tarefas por data
     const tarefasPorData = {};
 
     grupo_tarefas.forEach((tarefa) => {
