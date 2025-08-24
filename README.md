@@ -1,10 +1,10 @@
 # 📚 Gerenciador de Tarefas
 
-Este projeto é um **Gerenciador de Tarefas Web**, composto por três páginas principais: _"iniciar.html"_, _"adicionar.html"_ e _"visualizar.html"_.
+Este projeto é um **Gerenciador de Tarefas Web**, composto por três páginas principais: _"index.html"_, _"adicionar.html"_ e _"visualizar.html"_.
 
 ## Descrição das Páginas
 
-### Iniciar.html:
+### Index.html:
 É a página inicial, onde o usuário obtém uma breve explicação sobre o funcionamento do gerenciador de tarefas.
 
 ### Visualizar.html:
@@ -40,4 +40,3 @@ Antes de excluir uma tarefa concluída, é exibida uma mensagem de confirmação
 * Marcos Vinícius Ribeiro
 * Rodrigo Azevedo 
 * Wendson Tiago
-
