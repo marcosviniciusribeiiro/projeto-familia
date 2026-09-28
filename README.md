@@ -33,7 +33,7 @@ Não é possível criar tarefas com data de conclusão no passado. O sistema só
 Antes de excluir uma tarefa concluída, é exibida uma mensagem de confirmação, para evitar exclusões acidentais.
 
 ---
-## Alunos Participantes
+## Participantes
 
 * André Luis Oliveira 
 * Josué Lucas M.M 
